@@ -1,9 +1,25 @@
 import Joke from "./components/Joke"
+import  jokeData from "./assets/data/jokesData.js"
+
+
+
+const jokeElements = jokeData.map( joke => {
+  return (
+    <Joke 
+      setup={joke.setup}
+      punchline={joke.punchline}
+    />
+  )
+})
+
+console.log(jokeElements)
+
 
 export default function App() {
   return (
     <>
-      <Joke
+      {jokeElements}
+      {/* <Joke
         setup="I got my daughter a fridge for her birthday."
         punchline="I can't wait to see her face light up when she opens it."
         isPun={true}
@@ -27,7 +43,7 @@ export default function App() {
         setup="What's the best thing about Switzerland?"
         punchline="I don't know, but the flag is a big plus!"
         isPun={false}
-      />
+      /> */}
     </>
   )
 }
